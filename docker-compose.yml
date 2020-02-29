@@ -9,6 +9,6 @@ services:
     working_dir: /root/lisp
     command: >
       sh -c '
-        go build -o lisp.o
-        ./lisp.o
+        go build -o lisp
+        ./lisp
       '
