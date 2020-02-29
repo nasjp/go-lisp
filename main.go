@@ -47,6 +47,10 @@ type cell struct {
 
 type cells []cell
 
+func (cs cells) getCAR(addr int) int {
+	return cs[addr].car
+}
+
 func (cs cells) setCAR(addr int, x int) {
 	cs[addr].car = x
 }
@@ -81,7 +85,7 @@ func makesym(name string) int {
 
 func freshcell() int {
 	res := hp
-	hp = heap[hp].cdr
+	hp = heap.getCAR(hp)
 	heap.setCDR(res, 0)
 	fc--
 	return res
