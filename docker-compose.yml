@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  lisp:
+    image: golang:1.14.0-alpine3.11
+    volumes:
+      - ./:/root/lisp:cached
+      - ./.local/packages:/go/pkg:cached
+    working_dir: /root/lisp
+    command: >
+      sh -c '
+        go build -o lisp.o
+        ./lisp.o
+      '
