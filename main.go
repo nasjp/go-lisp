@@ -47,25 +47,11 @@ type cell struct {
 
 type cells []cell
 
-func (cs cells) getCAR(addr int) int {
-	return cs[addr].car
-}
-
-func (cs cells) setCAR(addr int, x int) {
-	cs[addr].car = x
-}
-
-func (cs cells) setCDR(addr int, x int) {
-	cs[addr].cdr = x
-}
-
-func (cs cells) setTag(addr int, t tag) {
-	cs[addr].tag = t
-}
-
-func (cs cells) setName(addr int, name string) {
-	heap[addr].name = name
-}
+func (cs cells) getCAR(addr int) int           { return cs[addr].car }
+func (cs cells) setCAR(addr int, x int)        { cs[addr].car = x }
+func (cs cells) setCDR(addr int, x int)        { cs[addr].cdr = x }
+func (cs cells) setTag(addr int, t tag)        { cs[addr].tag = t }
+func (cs cells) setName(addr int, name string) { heap[addr].name = name }
 
 func initcell() {
 	for addr := 0; addr < HEAPSIZE; addr++ {
