@@ -146,6 +146,7 @@ func gengetchar(txt string) func() rune {
 
 func getchar() rune {
 	reader := bufio.NewReader(os.Stdin)
+	// FIXME add err handling
 	input, _ := reader.ReadString('\n')
 	return []rune(input)[0]
 }
