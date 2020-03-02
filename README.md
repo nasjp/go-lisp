@@ -3,5 +3,5 @@
 ## Getting Started
 
 ```
-docker-compose up
+docker-compose run lisp go run main.go
 ```
